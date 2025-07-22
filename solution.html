@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fix Power Cut - LifeFix Hub</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            background: #f5f7fa;
+        }
+        header {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        .emoji {
+            font-size: 2rem;
+            vertical-align: middle;
+        }
+        .solution-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .step {
+            margin-bottom: 20px;
+            padding-left: 40px;
+            position: relative;
+            counter-increment: step-counter;
+        }
+        .step:before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #6a11cb;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+        }
+        .warning {
+            background: #FFF3E0;
+            border-left: 4px solid #FFA000;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tool {
+            display: inline-block;
+            background: #E3F2FD;
+            padding: 5px 12px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.9rem;
+        }
+        .back-btn {
+            display: inline-block;
+            background: #6a11cb;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        .back-btn:hover {
+            background: #2575fc;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><span class="emoji">⚡</span> Fixing Power Cut at Home</h1>
+    </header>
+
+    <div class="solution-card">
+        <h2>🔧 Tools You'll Need:</h2>
+        <div>
+            <span class="tool">🔦 Flashlight</span>
+            <span class="tool">🧤 Rubber Gloves</span>
+            <span class="tool">📱 Utility Company Number</span>
+            <span class="tool">🔌 Multimeter (optional)</span>
+        </div>
+
+        <div class="warning">
+            <strong>⚠️ Safety First!</strong> Never touch exposed wires. If you smell burning, evacuate and call emergency services.
+        </div>
+
+        <h2>📝 Step-by-Step Solution:</h2>
+        <div class="step">
+            <strong>Check if it's just your home</strong><br>
+            Look outside to see if neighbors have power. If their lights are off too, it's likely a neighborhood outage.
+        </div>
+
+        <div class="step">
+            <strong>Inspect your circuit breaker</strong><br>
+            Locate your electrical panel (usually in basement/garage). Open it and look for switches that are in the "OFF" position or between ON/OFF.
+        </div>
+
+        <div class="step">
+            <strong>Reset tripped breakers</strong><br>
+            Flip fully OFF, then back ON. You should feel resistance and hear a click. <em>Don't force it if it won't reset!</em>
+        </div>
+
+        <div class="step">
+            <strong>Check GFCI outlets</strong><br>
+            Press the "RESET" button on any outlets with test/reset buttons (common in kitchens/bathrooms).
+        </div>
+
+        <div class="step">
+            <strong>Contact your utility company</strong><br>
+            Call their outage line or check their website/app for outage reports in your area.
+        </div>
+
+        <div class="warning">
+            <strong>⏳ Pro Tip:</strong> Keep fridge/freezer closed during outages. Food stays cold for 4-6 hours if unopened.
+        </div>
+    </div>
+
+    <a href="index.html" class="back-btn">← Back to All Problems</a>
+
+    <script>
+        // Optional: Add interactive checklist
+        document.addEventListener('DOMContentLoaded', function() {
+            const steps = document.querySelectorAll('.step');
+            steps.forEach(step => {
+                step.addEventListener('click', function() {
+                    this.classList.toggle('completed');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

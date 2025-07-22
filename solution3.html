@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🧘 Stress Relief - LifeFix Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --calm-teal: #009688;
+            --peace-blue: #00ACC1;
+            --zen-green: #7CB342;
+            --alert-orange: #FFA000;
+        }
+        body {
+            font-family: 'Comfortaa', cursive;
+            background: linear-gradient(135deg, #E0F7FA 0%, #B2EBF2 100%);
+            margin: 0;
+            padding: 0;
+            color: #263238;
+        }
+        header {
+            background: linear-gradient(135deg, var(--calm-teal), var(--peace-blue));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        header::after {
+            content: "🌿 ☁️ 🍃 🌸 🕊️";
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100%;
+            font-size: 2.5rem;
+            opacity: 0.15;
+            animation: floatRight 30s linear infinite;
+        }
+        @keyframes floatRight {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+        }
+        .breathing-emoji {
+            font-size: 5rem;
+            animation: breathe 4s infinite ease-in-out, float 6s infinite ease-in-out;
+        }
+        @keyframes breathe {
+            0%, 100% { transform: scale(0.9); }
+            50% { transform: scale(1.2); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .solution-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px auto;
+            max-width: 800px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border: 2px solid rgba(0, 150, 136, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        .solution-card::before {
+            content: "🌸 🍃 🌿";
+            position: absolute;
+            right: -50px;
+            top: -50px;
+            font-size: 5rem;
+            opacity: 0.1;
+            transform: rotate(20deg);
+        }
+        .technique {
+            background: rgba(124, 179, 66, 0.1);
+            border-left: 5px solid var(--zen-green);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 15px 15px 0;
+            transition: all 0.3s;
+        }
+        .technique:hover {
+            transform: translateX(5px);
+            background: rgba(124, 179, 66, 0.2);
+        }
+        .step {
+            margin-bottom: 15px;
+            padding-left: 35px;
+            position: relative;
+        }
+        .step:before {
+            content: "🌱";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.5rem;
+        }
+        .breathe-container {
+            width: 200px;
+            height: 200px;
+            margin: 30px auto;
+            position: relative;
+        }
+        .breathe-circle {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: rgba(0, 150, 136, 0.1);
+            position: absolute;
+            animation: pulse 8s infinite ease-in-out;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(0.8); opacity: 0.7; }
+            50% { transform: scale(1.2); opacity: 1; }
+        }
+        .tool {
+            display: inline-block;
+            background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+            color: var(--calm-teal);
+            padding: 8px 15px;
+            border-radius: 50px;
+            margin: 5px;
+            font-weight: bold;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        .tool:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 150, 136, 0.2);
+        }
+        .warning {
+            background: linear-gradient(135deg, #FFF8E1, #FFECB3);
+            border-left: 5px solid var(--alert-orange);
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 15px 15px 0;
+            animation: gentlePulse 4s infinite;
+        }
+        @keyframes gentlePulse {
+            0%, 100% { opacity: 0.9; }
+            50% { opacity: 1; }
+        }
+        .back-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--calm-teal), var(--peace-blue));
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 20px auto;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 150, 136, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><span class="breathing-emoji">😌</span> Stress Relief Toolkit</h1>
+        <p style="font-size: 1.3rem;">Breathe. Reset. Feel Better.</p>
+    </header>
+
+    <div class="solution-card animate__animated animate__fadeIn">
+        <!-- Floating nature elements -->
+        <div style="position: absolute; top: 20px; right: 20px; font-size: 3rem; opacity: 0.2; animation: float 6s infinite ease-in-out;">🍃</div>
+        
+        <h2 style="color: var(--calm-teal);">🛠️ Your Stress-Fighting Tools:</h2>
+        <div>
+            <span class="tool animate__animated animate__bounceIn">🧘 Meditation App</span>
+            <span class="tool animate__animated animate__bounceIn" style="animation-delay: 0.2s;">🎧 Calm Music</span>
+            <span class="tool animate__animated animate__bounceIn" style="animation-delay: 0.4s;">📓 Journal</span>
+            <span class="tool animate__animated animate__bounceIn" style="animation-delay: 0.6s;">🫖 Herbal Tea</span>
+        </div>
+
+        <div class="warning animate__animated animate__pulse">
+            <h3 style="margin-top: 0;">🚩 When to Seek Help:</h3>
+            <p>If stress causes chest pain, difficulty breathing, or thoughts of self-harm, contact a professional immediately.</p>
+        </div>
+
+        <h2 style="color: var(--peace-blue);">🌬️ 4-7-8 Breathing Technique</h2>
+        <div class="technique animate__animated animate__fadeInLeft">
+            <div class="breathe-container">
+                <div class="breathe-circle"></div>
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem;">😌</div>
+            </div>
+            <div class="step">Sit comfortably with straight spine</div>
+            <div class="step">Place tongue behind front teeth</div>
+            <div class="step"><b>Inhale quietly</b> through nose for 4 seconds</div>
+            <div class="step"><b>Hold breath</b> for 7 seconds</div>
+            <div class="step"><b>Exhale completely</b> through mouth for 8 seconds</div>
+            <div class="step">Repeat 4 cycles (calms nervous system in 1 minute)</div>
+        </div>
+
+        <h2 style="color: var(--zen-green);">🌳 5-4-3-2-1 Grounding Method</h2>
+        <div class="technique animate__animated animate__fadeInRight">
+            <div class="step"><b>5 things</b> you can see (describe textures/details)</div>
+            <div class="step"><b>4 things</b> you can touch (notice temperatures/textures)</div>
+            <div class="step"><b>3 things</b> you can hear (distant sounds too)</div>
+            <div class="step"><b>2 things</b> you can smell (or pleasant smell memories)</div>
+            <div class="step"><b>1 thing</b> you can taste (sip water or chew gum)</div>
+        </div>
+
+        <h2 style="color: var(--calm-teal);">💆 Progressive Muscle Relaxation</h2>
+        <div class="technique animate__animated animate__fadeInLeft">
+            <div class="step">Close eyes, take 3 deep breaths</div>
+            <div class="step"><b>Tense</b> forehead for 5 seconds → release</div>
+            <div class="step"><b>Squeeze</b> eyes shut → release</div>
+            <div class="step"><b>Clench</b> jaw → release</div>
+            <div class="step">Continue downward (shoulders, arms, etc.)</div>
+        </div>
+
+        <div style="text-align: center; margin: 40px 0;">
+            <a href="index.html" class="back-btn animate__animated animate__pulse animate__infinite">🔄 Back to All Problems</a>
+        </div>
+    </div>
+
+    <script>
+        // Interactive breathing guide
+        document.addEventListener('DOMContentLoaded', function() {
+            const circle = document.querySelector('.breathe-circle');
+            const emoji = document.querySelector('.breathe-container div');
+            
+            const breathingPhases = [
+                { scale: 0.8, emoji: "😌", duration: 4 }, // Inhale
+                { scale: 1.2, emoji: "😊", duration: 7 }, // Hold
+                { scale: 0.8, emoji: "😮‍💨", duration: 8 }  // Exhale
+            ];
+            
+            let phase = 0;
+            
+            function animateBreathing() {
+                circle.style.animation = `pulse ${breathingPhases[phase].duration}s ease-in-out`;
+                emoji.textContent = breathingPhases[phase].emoji;
+                phase = (phase + 1) % breathingPhases.length;
+                setTimeout(animateBreathing, breathingPhases[phase].duration * 1000);
+            }
+            
+            animateBreathing();
+        });
+    </script>
+</body>
+</html>

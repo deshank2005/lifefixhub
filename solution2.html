@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🚗 Fix Car - LifeFix Hub (Animated!)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --car-red: #FF3E41;
+            --car-blue: #00A8FF;
+            --car-yellow: #FFD700;
+            --car-dark: #1A1A2E;
+        }
+        body {
+            font-family: 'Comic Neue', cursive;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(135deg, var(--car-red), var(--car-yellow));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        header::after {
+            content: "🚗 🚙 🏎️";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            font-size: 2rem;
+            opacity: 0.2;
+            animation: driveBy 15s linear infinite;
+        }
+        @keyframes driveBy {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        h1 {
+            font-size: 3rem;
+            text-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+            margin: 0;
+        }
+        .emoji-title {
+            font-size: 4rem;
+            display: inline-block;
+            animation: bounce 2s infinite, rotate 5s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes rotate {
+            0% { transform: rotate(-15deg); }
+            50% { transform: rotate(15deg); }
+            100% { transform: rotate(-15deg); }
+        }
+        .solution-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px auto;
+            max-width: 800px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 3px dashed var(--car-blue);
+            position: relative;
+            overflow: hidden;
+        }
+        .solution-card::before {
+            content: "⚙️ 🧰 🔧";
+            position: absolute;
+            right: -50px;
+            top: -50px;
+            font-size: 5rem;
+            opacity: 0.1;
+            transform: rotate(30deg);
+        }
+        .step {
+            background: rgba(0, 168, 255, 0.1);
+            border-left: 5px solid var(--car-blue);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 15px 15px 0;
+            transition: all 0.3s;
+            position: relative;
+        }
+        .step:hover {
+            transform: translateX(10px);
+            background: rgba(0, 168, 255, 0.2);
+        }
+        .step-number {
+            background: var(--car-red);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .tool {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: var(--car-dark);
+            padding: 8px 15px;
+            border-radius: 50px;
+            margin: 5px;
+            font-weight: bold;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            transform: rotate(-5deg);
+            transition: all 0.3s;
+        }
+        .tool:hover {
+            transform: rotate(0) scale(1.1);
+            box-shadow: 0 5px 15px rgba(255, 62, 65, 0.3);
+        }
+        .warning {
+            background: linear-gradient(135deg, #FFF3E0, #FFE0B2);
+            border-left: 5px solid #FFA000;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 15px 15px 0;
+            animation: flashBorder 3s infinite;
+        }
+        @keyframes flashBorder {
+            0%, 100% { border-left-color: #FFA000; }
+            50% { border-left-color: #FF3E41; }
+        }
+        .emoji-float {
+            font-size: 2rem;
+            position: absolute;
+            animation: floatUp 5s infinite;
+            opacity: 0.7;
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-100px) rotate(360deg); }
+        }
+        .back-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--car-red), var(--car-blue));
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 20px auto;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+        }
+        .back-btn:hover {
+            transform: translateY(-5px) rotate(-5deg);
+            box-shadow: 0 10px 20px rgba(255, 62, 65, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><span class="emoji-title">🚗</span> Fixing a Car That Won't Start</h1>
+        <p style="font-size: 1.5rem;">⚡ <span class="animate__animated animate__flash animate__infinite">Emergency Edition!</span> ⚡</p>
+    </header>
+
+    <div class="solution-card animate__animated animate__fadeInUp">
+        <!-- Floating emojis -->
+        <span class="emoji-float" style="left: 10%; animation-delay: 0s;">🔋</span>
+        <span class="emoji-float" style="left: 20%; animation-delay: 1s;">🔧</span>
+        <span class="emoji-float" style="left: 90%; animation-delay: 2s;">⚠️</span>
+        
+        <h2 style="color: var(--car-red);">🛠️ Tools/Items Needed:</h2>
+        <div>
+            <span class="tool animate__animated animate__bounceIn">🔋 Jumper Cables</span>
+            <span class="tool animate__animated animate__bounceIn" style="animation-delay: 0.2s;">🧤 Insulated Gloves</span>
+            <span class="tool animate__animated animate__bounceIn" style="animation-delay: 0.4s;">🔦 Flashlight</span>
+            <span class="tool animate__animated animate__bounceIn" style="animation-delay: 0.6s;">📱 Roadside Assistance</span>
+        </div>
+
+        <div class="warning animate__animated animate__pulse animate__infinite">
+            <h3 style="margin-top: 0;">🚨 Emergency Situation If:</h3>
+            <p>You smell gasoline 💨, see smoke 💨, or hear loud knocking sounds 🔨</p>
+        </div>
+
+        <h2 style="color: var(--car-blue);">🔍 Diagnosis Steps:</h2>
+        <div class="step animate__animated animate__fadeInLeft">
+            <span class="step-number">1</span>
+            <strong>Listen to what happens when you turn the key 🔑</strong>
+            <ul style="list-style-type: '👉 ';">
+                <li><b>Clicking sound:</b> Weak battery 🔋 (most common)</li>
+                <li><b>Single loud click:</b> Possible starter motor issue ⚙️</li>
+                <li><b>Engine cranks but won't start:</b> Fuel ⛽ or spark 🔥 problem</li>
+                <li><b>Complete silence:</b> Battery connection 🔌 or security system 🛡️</li>
+            </ul>
+        </div>
+
+        <h2 style="color: var(--car-red);">🔄 Jump-Start Procedure:</h2>
+        <div class="step animate__animated animate__fadeInRight">
+            <span class="step-number">2</span>
+            <strong>Position donor car correctly 🚗💨🚗</strong>
+            <p>Park nose-to-nose or side-by-side. <span style="color: var(--car-red);">⚠️ Never touch cables to moving parts!</span> Turn off both engines.</p>
+        </div>
+
+        <div class="step animate__animated animate__fadeInLeft">
+            <span class="step-number">3</span>
+            <strong>Connect jumper cables in EXACT order:</strong>
+            <ol type="A" style="list-style-type: none;">
+                <li>🔴 <b>Red to dead (+)</b> terminal</li>
+                <li>🔴 <b>Red to donor (+)</b> terminal</li>
+                <li>⚫ <b>Black to donor (-)</b> terminal</li>
+                <li>⚫ <b>Black to bare metal</b> on dead car (engine block recommended)</li>
+            </ol>
+            <div style="background: #FFEBEE; padding: 10px; border-radius: 5px; margin-top: 10px;">
+                ⚠️ <b style="color: var(--car-red);">DANGER!</b> Never connect black to dead (-) terminal first - risk of explosion! 💥
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 40px 0;">
+            <div style="font-size: 5rem; animation: bounce 1s infinite;">👇</div>
+            <a href="index.html" class="back-btn animate__animated animate__pulse animate__infinite">🚙 Back to All Problems 🚗</a>
+        </div>
+    </div>
+
+    <script>
+        // Add random emoji confetti on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const emojis = ["🔧", "🔋", "⚡", "🚗", "⚠️", "🧤", "🔦", "🛠️"];
+            for (let i = 0; i < 20; i++) {
+                const emoji = document.createElement("div");
+                emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                emoji.style.position = "fixed";
+                emoji.style.left = Math.random() * 100 + "vw";
+                emoji.style.top = Math.random() * 100 + "vh";
+                emoji.style.fontSize = (Math.random() * 20 + 10) + "px";
+                emoji.style.opacity = "0";
+                emoji.style.animation = `floatUp ${Math.random() * 3 + 2}s forwards`;
+                emoji.style.animationDelay = Math.random() * 2 + "s";
+                document.body.appendChild(emoji);
+            }
+        });
+    </script>
+</body>
+</html>
